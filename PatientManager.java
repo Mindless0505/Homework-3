@@ -12,9 +12,9 @@ public class PatientManager {
         return patients.indexOf(patient);
         }
 
-    public Patient Remove(int num){
-        patients.remove(num);
-        return patients.get(num);
+    public Patient removePatient(int num){
+        Patient temp=patients.remove(num);
+        return temp;
     }
     public void caffineAbsorbtion(){
         for (int i=0;i<patients.size();i++){
@@ -22,16 +22,22 @@ public class PatientManager {
          
             if (patients.get(i).caffineLevel<=0){
                 patients.remove(i);
+                i--;
             }
 
         }
     }
         
+    @Override
     public String toString(){
+        String ret="";
         for (int i=0;i<patients.size();i++){
-            return "ID: "+patients.get(i).IDNumber+"; Caffine: "+patients.get(i).caffineLevel;
+            ret+= "ID: "+patients.get(i).IDNumber+"; Caffine: "+patients.get(i).caffineLevel+"\n";
         }
+        if (ret==""){
         return "Empty";
+        }
+        return ret;
     }
 
     }

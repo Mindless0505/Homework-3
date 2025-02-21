@@ -13,7 +13,15 @@ public static void main(String[] args){
     pManager.Add(p3);
     pManager.Add(p4);
     System.out.println(pManager);
-}
+    pManager.caffineAbsorbtion();
+    pManager.caffineAbsorbtion();
+    System.out.println(pManager);
+    pManager.removePatient(2);
+    System.out.println(pManager);
+
+    }
 
 
 }
+
+
